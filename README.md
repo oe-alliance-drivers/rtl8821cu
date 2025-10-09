@@ -90,7 +90,7 @@ the hardware to test the above.
 ### Compatible Kernels
 
 - Kernels: 5.10 - 5.11 (Realtek)
-- Kernels: 5.12 - 6.14 (community support)
+- Kernels: 5.12 - 6.17 (community support)
 
 Note: Kernels earlier than 5.10 may work but are not tested or
 supported.
@@ -105,8 +105,6 @@ Note: The information in this section depends largely on user reports
 which can be provided via PR or message in Issues.
 
 - [Arch Linux](https://www.archlinux.org) (kernels 5.4 and 5.11)
-
-- [Armbian](https://www.armbian.com/) (kernel 5.15) (Rock 4 SE (Rock 4b image with xfce))
 
 - [Debian](https://www.debian.org/) (kernels 5.10, 5.15 and 6.1)
 
