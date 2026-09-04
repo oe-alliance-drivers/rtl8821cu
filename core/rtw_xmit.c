@@ -17,6 +17,41 @@
 #include <drv_types.h>
 #include <hal_data.h>
 
+/* Radiotap definitions this driver relies on. The MCS and VHT fields arrived
+ * in 3.10, the LDPC coding field only in 3.15, and this driver is built for
+ * older kernels as well. The values are those of the radiotap specification
+ * and match include/net/ieee80211_radiotap.h upstream. */
+#ifndef IEEE80211_RADIOTAP_VHT
+#define IEEE80211_RADIOTAP_VHT			21
+#endif
+#ifndef IEEE80211_RADIOTAP_MCS_HAVE_STBC
+#define IEEE80211_RADIOTAP_MCS_HAVE_STBC	0x20
+#endif
+#ifndef IEEE80211_RADIOTAP_MCS_STBC_MASK
+#define IEEE80211_RADIOTAP_MCS_STBC_MASK	0x60
+#endif
+#ifndef IEEE80211_RADIOTAP_MCS_STBC_SHIFT
+#define IEEE80211_RADIOTAP_MCS_STBC_SHIFT	5
+#endif
+#ifndef IEEE80211_RADIOTAP_VHT_KNOWN_STBC
+#define IEEE80211_RADIOTAP_VHT_KNOWN_STBC	0x0001
+#endif
+#ifndef IEEE80211_RADIOTAP_VHT_KNOWN_GI
+#define IEEE80211_RADIOTAP_VHT_KNOWN_GI		0x0004
+#endif
+#ifndef IEEE80211_RADIOTAP_VHT_KNOWN_BANDWIDTH
+#define IEEE80211_RADIOTAP_VHT_KNOWN_BANDWIDTH	0x0040
+#endif
+#ifndef IEEE80211_RADIOTAP_VHT_FLAG_STBC
+#define IEEE80211_RADIOTAP_VHT_FLAG_STBC	0x01
+#endif
+#ifndef IEEE80211_RADIOTAP_VHT_FLAG_SGI
+#define IEEE80211_RADIOTAP_VHT_FLAG_SGI		0x04
+#endif
+#ifndef IEEE80211_RADIOTAP_CODING_LDPC_USER0
+#define IEEE80211_RADIOTAP_CODING_LDPC_USER0	0x01
+#endif
+
 static u8 P802_1H_OUI[P80211_OUI_LEN] = { 0x00, 0x00, 0xf8 };
 static u8 RFC1042_OUI[P80211_OUI_LEN] = { 0x00, 0x00, 0x00 };
 
